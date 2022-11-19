@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+
+{% block bodyblock %}
+<body>
+<div class="header">
+  <h2>MY BLOG</h2>
+</div>
+
+<div class="row">
+
+    <h1 style="color: burlywood;"> CREATE A NEW BLUG</h1>
+  <div class="leftcolumn">
+    
+    <div class="card">
+         
+        <form action="create" method="POST">
+             {% csrf_token %}
+            <p>Enter Title: <input type="text" name="title"></p>
+          
+            <p>
+          
+              body:<br>
+          
+              <textarea name="message"></textarea>
+          
+            </p>
+          
+            <input type="submit" value="post data">
+          
+          </form>
+        
+    </div>
+    <a style="text-decoration: none; color: rgb(180, 40, 40);" href="{% url 'index' %}" ><center><h1>Back</h1></center></a>  
+</div>
+</div>
+</body>
+
+{% endblock %}
